@@ -35,7 +35,7 @@ def askGHQ(request):
         contextoMensajes.append({"role": "user", "content": texto}) #ultima pregunta enviada
         #llamada a la API 
         
-        openai.api_key = "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"
+        openai.api_key = ""
         openai.Model.list()
 
         MODEL = "gpt-3.5-turbo"
