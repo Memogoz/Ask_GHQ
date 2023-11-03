@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AskGHQ</title>
+    <link rel="stylesheet" href="{% static 'mi_aplicacion/css/estilo.css' %}">
+    <script src="{% static 'mi_aplicacion/js/script.js' %}"></script>
+</head>
+<body>
+        <nav>
+            <button id="button_new" onclick="resetearChat()">+  New chat</button>
+        </nav>
+        <header>
+            <h1>Ask GHQ</h1>
+        </header>
+        <main>
+            <form method="post">
+                {% csrf_token %}
+
+            <div id="chat">
+                {% if responseGHQ %}
+
+                    {% for item in preguntas_respuestas %}
+                        <p class="question">{{ item.pregunta }}</p>
+                        <p class="response">{{ item.respuesta }}</p>
+                    {% endfor %}
+
+                    <input type="hidden" name="prevQ" id="prevQuestions" value="{{ prevQ }}">
+                    <input type="hidden" name="prevR" id="prevResponses"  value="{{ prevR }}">
+                {% endif %}
+
+                <span id="loader"></span>
+            </div>
+            
+                
+                <input type="text" name="texto" value="" required>
+                <input class="sendBtn" type="submit" value=">" onclick="mostrarLoader()">
+            </form>            
+        </main>
+        
+</body>
+</html>
