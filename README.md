@@ -16,6 +16,7 @@ Para ejecutar esta aplicación en tu entorno local, asegúrate de tener instalad
 
 - Python 
 - Django ```pip install django```
+- OpenIA ```pip install openai```
 
 ## Cómo Iniciar la Aplicación
 
@@ -25,7 +26,7 @@ Para ejecutar esta aplicación en tu entorno local, asegúrate de tener instalad
    
 3. Navega al directorio del proyecto:
 
-  ```cd pagina-web-ia```
+  ```cd .../U2_P2_Cloud```
   
 3. Inicia el servidor de desarrollo:
 
